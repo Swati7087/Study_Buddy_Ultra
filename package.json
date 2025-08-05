@@ -1,0 +1,20 @@
+{
+  "name": "study-buddy-ultra",
+  "version": "1.0.0",
+  "description": "A comprehensive study companion application built with MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "setup": "npm run install-all"
+  },
+  "keywords": ["study", "productivity", "mern", "react", "nodejs", "mongodb"],
+  "author": "Swati7087",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
