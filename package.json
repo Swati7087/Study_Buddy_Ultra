@@ -11,10 +11,17 @@
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
     "setup": "npm run install-all"
   },
-  "keywords": ["study", "productivity", "mern", "react", "nodejs", "mongodb"],
+  "keywords": [
+    "study",
+    "productivity",
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
   "author": "Swati7087",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
   }
-} 
+}
