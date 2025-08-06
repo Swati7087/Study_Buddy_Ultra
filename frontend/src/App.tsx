@@ -1,92 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import { AuthProvider } from './contexts/AuthContext';
-import { ThemeProvider } from './contexts/ThemeContext';
-import Navbar from './components/layout/Navbar';
-import Sidebar from './components/layout/Sidebar';
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
-import StudyRoomPage from './pages/StudyRoomPage';
-import SessionHistoryPage from './pages/SessionHistoryPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import ProtectedRoute from './components/auth/ProtectedRoute';
 import './App.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <Router>
-          <div className="App">
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                duration: 4000,
-                style: {
-                  background: '#363636',
-                  color: '#fff',
-                },
-                success: {
-                  duration: 3000,
-                  iconTheme: {
-                    primary: '#22c55e',
-                    secondary: '#fff',
-                  },
-                },
-                error: {
-                  duration: 5000,
-                  iconTheme: {
-                    primary: '#ef4444',
-                    secondary: '#fff',
-                  },
-                },
-              }}
-            />
-            
-            <Navbar />
-            <Sidebar />
-            
-            <main className="main-content">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                
-                <Route
-                  path="/profile"
-                  element={
-                    <ProtectedRoute>
-                      <ProfilePage />
-                    </ProtectedRoute>
-                  }
-                />
-                
-                <Route
-                  path="/study-room"
-                  element={
-                    <ProtectedRoute>
-                      <StudyRoomPage />
-                    </ProtectedRoute>
-                  }
-                />
-                
-                <Route
-                  path="/sessions"
-                  element={
-                    <ProtectedRoute>
-                      <SessionHistoryPage />
-                    </ProtectedRoute>
-                  }
-                />
-              </Routes>
-            </main>
+    <div className="App">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gradient mb-4">
+            StudyBuddy Ultra
+          </h1>
+          <p className="text-gray-600 mb-8">
+            Your comprehensive study companion is ready!
+          </p>
+          <div className="space-y-4">
+            <div className="btn btn-primary">
+              Get Started
+            </div>
+            <div className="text-sm text-gray-500">
+              Frontend is working with Tailwind CSS!
+            </div>
           </div>
-        </Router>
-      </AuthProvider>
-    </ThemeProvider>
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default App; 
+export default App;
